@@ -1,0 +1,62 @@
+#sidebar-wrapper
+    ul#sidebar_menu.sidebar-nav
+        li.sidebar-brand#toggleButton
+            a#menu-toggle(ng-click='toggleState()')
+                | Menu
+                span#main_icon.fa.fa-navicon.fa-fw
+    if currentUser
+        ul#sidebar.sidebar-nav
+            li
+                a(href='/profile')
+                    | Home
+                    span.fa.fa-home.fa-fw.sub_icon
+            li
+              a(href='/catbrick')
+                | CatBrick
+                span.fa.fa-gamepad.fa-fw.sub_icon
+            li
+                a(href='/posts')
+                    | Posts
+                    span.fa.fa-book.fa-fw.sub_icon
+            li
+                a(href='/newpost')
+                    | New Post
+                    span.fa.fa-pied-piper.fa-fw.sub_icon
+            li
+                a(href='/about')
+                    | About
+                    span.fa.fa-search.fa-fw.sub_icon
+            li
+                a(href='/contact')
+                    | Contact
+                    span.fa.fa-pied-piper.fa-fw.sub_icon
+            li
+                a(href='/logout')
+                    | Log Out
+                    span.fa.fa-times.fa-fw.sub_icon
+    else
+        ul#sidebar.sidebar-nav
+            li
+                a(href='/')
+                    | Home
+                    span.fa.fa-home.fa-fw.sub_icon
+            li
+                a(href='/login')
+                    | Login
+                    span.fa.fa-plus.fa-fw.sub_icon
+            li
+                a(href='/register')
+                    | Register
+                    span.fa.fa-user.fa-fw.sub_icon
+            li
+                a(href='/posts')
+                    | Posts
+                    span.fa.fa-book.fa-fw.sub_icon
+            li
+                a(href='/about')
+                    | About
+                    span.fa.fa-pied-piper.fa-fw.sub_icon
+            li
+                a(href='/contact')
+                    | Contact
+                    span.fa.fa-unlock.fa-fw.sub_icon

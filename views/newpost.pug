@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .row
+        .col-md-8.offset-md-2.registrationForm
+            h1.display-5.text-md-center.formHeading New Post
+            // register form
+            form(method='POST' action='/api/posts')
+                .form-group
+                    label(for='title') Title:
+                    input#title.form-control(type='text', placeholder='Weinerschnitzels are loose in downtown NYC!' name='title')
+                .form-group
+                    label(for='body') Body:
+                    textarea#body.form-control(type='text', placeholder='Yesterday while I was tying my shoe...', name='body')
+                .form-group
+                    label(for='link') Link:
+                    input#link.form-control(type='text', placeholder='http://awesomenews.com', name='link')
+                button.btn.btn-primary.btn-block.new-post-button(type='submit') Post

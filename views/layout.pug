@@ -1,0 +1,32 @@
+html(lang='en' ng-app='catChat')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='icon', href='images/favicon.ico')
+        title CatChat | #{title}
+        link(rel='stylesheet', href='libs/normalize-css/normalize.css')
+        link(rel='stylesheet', href='libs/tether/dist/css/tether.css')
+        link(rel='stylesheet', href='libs/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='libs/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='styles/style.css')
+    body(ng-controller='MainController')
+        // page wrapper
+        #wrapper.active(ng-class='sidebarState ? "active" : ""')
+            // sidebar
+            include sidebar
+
+            // main content wrapper
+            #page-content-wrapper
+                .page-content.inset#page-main-content-section
+                    // main page content here
+                    block content
+
+        // load scripts
+        script(src='libs/phaser/build/phaser.js')
+        script(src='scripts/game.js')
+        script(src='libs/tether/dist/js/tether.js')
+        script(src='libs/jquery/dist/jquery.js')
+        script(src='libs/bootstrap/dist/js/bootstrap.js')
+        script(src='libs/angular/angular.js')
+        script(src='scripts/app.js')

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+        .row
+            .col-md-6.offset-md-3.text-xs-center.login-content-main
+                h1.display-4.m-b-2 Log In
+                hr.m-b-1
+                form(method='POST' action='/login')
+                    div.form-group
+                        label(for='email') Email
+                        input.form-control(type='text' id='email' placeholder='email' name='email')
+                    div.form-group
+                        label(for='password') Password
+                        input.form-control(type='password' id='password' placeholder='password' name='password')
+                    button.btn.btn-primary(type='submit') Log in
+      
