@@ -47,7 +47,7 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
 });
 
 // GET /logout
-router.get('/logout', function(req, res, next) {
+router.get('/logout', mid.requiresLogin, function(req, res, next) {
     if (req.session) {
         // delete session object
         req.session.destroy(function(err) {
@@ -59,11 +59,13 @@ router.get('/logout', function(req, res, next) {
         });
     }
 });
+
 // GET /login
-router.get('/login', mid.loggedOut, function(req, res, next) {
+router.get('/login', mid.destroySession, function(req, res, next) {
     return res.render('login', {
         title: 'Log In'
     });
+
 });
 
 // POST /login
@@ -76,7 +78,7 @@ router.post('/login', function(req, res, next) {
                 return next(err);
             } else {
                 req.session.userId = user._id;
-		req.session.nickname = user.nickname;
+                req.session.nickname = user.nickname;
                 return res.redirect('/profile')
             }
         });
@@ -123,7 +125,7 @@ router.post('/register', function(req, res, next) {
                 return next(error);
             } else {
                 req.session.userId = user._id;
-		req.session.nickname = user.nickname;
+                req.session.nickname = user.nickname;
                 return res.redirect('/profile');
             }
         });
@@ -158,17 +160,19 @@ router.get('/contact', function(req, res, next) {
 });
 // get api
 router.get('/api/posts', function(req, res, next) {
-  Post.find({}, function(error, posts) {
-    if(error) {
-      return next(error);
-    } else {
-      res.json(posts);
-    }
-  });
+    Post.find({}, function(error, posts) {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(posts);
+        }
+    });
 });
 // GET /contact
 router.get('/posts', function(req, res, next) {
-  return res.render('posts', { title: 'Posts' })
+    return res.render('posts', {
+        title: 'Posts'
+    })
 });
 // GET /contact
 router.get('/newpost', function(req, res, next) {
@@ -178,7 +182,9 @@ router.get('/newpost', function(req, res, next) {
 });
 
 router.get('/catbrick', function(req, res, next) {
-  return res.render('catbrick', { title: 'CATBRICK'})
+    return res.render('catbrick', {
+        title: 'CATBRICK'
+    })
 });
 
 module.exports = router;

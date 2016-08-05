@@ -16,6 +16,20 @@ function requiresLogin(req, res, next) {
     }
 }
 
+function destroySession(req, res, next) {
+    if (req.session) {
+        req.session.destroy(function(err) {
+            if (err) {
+                return next(err);
+            } else {
+                return next();
+            }
+        });
+    } else if (!req.session) {
+        return res.redirect('/login');
+    }
+}
+
 function allowPost(req, res, next) {
     if (req.session && req.session.userId) {
         return next();
@@ -29,3 +43,4 @@ function allowPost(req, res, next) {
 module.exports.loggedOut = loggedOut;
 module.exports.requiresLogin = requiresLogin;
 module.exports.allowPost = allowPost;
+module.exports.destroySession = destroySession;

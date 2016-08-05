@@ -1,6 +1,16 @@
 extends layout
 
 block content
-    .row.profile-content-main.text-xs-center
-        .col-md-12.text-xs-center
-            img(src='images/dancing-cat.gif', id='dancing-cat')
+  .container
+    .jumbotron
+      .card
+        - var sp = name.indexOf(' ')
+        - var firstName = name.substr(0, sp)
+        .card-block.card-header.profile-content-main
+          h1.m-t-1.card-title.display-4.text-xs-center.profile-content-main Hello, #{firstName}
+          h6.card-subtitle.text-muted.text-xs-center #{nickname}
+        img.card-img-bottom(src='images/dancing-cat.gif')
+        .card-block.profile-content-main
+          p.card-text {{ bacon }}
+        .card-footer
+          a.btn.btn-primary.btn-lg Meow
