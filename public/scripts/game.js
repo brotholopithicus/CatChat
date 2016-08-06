@@ -1,11 +1,27 @@
 var mainState = {
     preload: function() {
-        this.width = 1200;
-        this.height = 700;
+        this.width = this.gameWidth();
+        this.height = this.gameHeight();
         game.load.spritesheet('kitty', 'assets/kitty.png', 500, 350);
         game.load.image('brick', 'assets/brick.png', 70, 70);
         game.load.spritesheet('lava', 'assets/lava.png', 702, 175);
         game.load.image('cave', 'assets/cave.png', 3000, 1100);
+    },
+    displayInformation: function() {
+        return {
+            availableWidth: screen.availWidth,
+            availableHeight: screen.availHeight,
+            totalWidth: screen.width,
+            totalHeight: screen.height,
+            browserWidth: window.innerWidth,
+            browserHeight: window.innerHeight
+        }
+    },
+    gameWidth: function() {
+        return this.displayInformation().availableWidth * 0.75;
+    },
+    gameHeight: function() {
+        return this.displayInformation().availableHeight * 0.75;
     },
     create: function() {
         // PHYSICS CONFIG
@@ -129,7 +145,7 @@ var menuState = {
         this.game.state.start('main');
     }
 }
-var game = new Phaser.Game(1200, 700, Phaser.AUTO, 'game');
+var game = new Phaser.Game(mainState.gameWidth(), mainState.gameHeight(), Phaser.AUTO, 'game');
 game.state.add('main', mainState);
 game.state.add('menu', menuState);
 game.state.start('menu');

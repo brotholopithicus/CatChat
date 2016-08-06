@@ -3,7 +3,7 @@
         li.sidebar-brand#toggleButton
             a#menu-toggle(ng-click='toggleState()')
                 | Menu
-                span#main_icon.fa.fa-navicon.fa-fw
+                span#main_icon.fa.fa-times.fa-fw.sidebar-toggle-hamburger(ng-class='!sidebarState ? "fa-navicon" : "fa-times"')
     if currentUser
         ul#sidebar.sidebar-nav
             li

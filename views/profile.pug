@@ -1,16 +1,22 @@
 extends layout
 
 block content
-  .container
-    .jumbotron
-      .card
-        - var sp = name.indexOf(' ')
-        - var firstName = name.substr(0, sp)
-        .card-block.card-header.profile-content-main
-          h1.m-t-1.card-title.display-4.text-xs-center.profile-content-main Hello, #{firstName}
-          h6.card-subtitle.text-muted.text-xs-center #{nickname}
-        img.card-img-bottom(src='images/dancing-cat.gif')
-        .card-block.profile-content-main
-          p.card-text {{ bacon }}
-        .card-footer
-          a.btn.btn-primary.btn-lg Meow
+    .container
+        .card#profile-card
+            - var sp = name.indexOf(' ')
+            - var firstName = name.substr(0, sp)
+            .card-block.card-header.profile-content-main
+                h3.text-xs-center #{nickname}'s Cats
+            .card-block
+                .row
+                    .col-md-12.col-xs-12.col-sm-12.col-lg-10.offset-lg-1.profile-center-div.m-t-0
+                        img.img-fluid.img-rounded.fat-cat-gif(src='images/fat-cat.gif')
+                        ul.list-group.m-t-1
+                            h4.list-group-item.list-group-item.text-xs-center.profile-cat-details-heading Alahambro
+                            li.list-group-item.text-default Age: 7, Breed: West African Mountain Cat
+                            blockquote.list-group-item.text-default Lick arm hair inspect anything brought into the house, for fall over dead (not really but gets sypathy) or stare at ceiling light or lounge in doorway wake up human for food at 4am walk on car leaving trail of paw prints on hood and windshield.
+            .card-footer.profile-content-footer
+                .col-md-3.offset-md-3.col-xs-6.col-sm-3.offset-sm-3.col-lg-3.offset-lg-3
+                    button.btn.btn-secondary.profile-button-bottom.profile-button-bottom-one(onclick='history.back()') Back
+                .col-md-3.col-xs-6.col-lg-3.col-sm-3
+                    button.btn.btn-secondary.profile-button-bottom.profile-button-bottom-two(href='/logout') Logout

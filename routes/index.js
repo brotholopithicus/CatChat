@@ -4,6 +4,8 @@ var User = require('../models/user');
 var Post = require('../models/post');
 var mid = require('../middleware');
 
+var faker = require('faker');
+
 // POST /posts
 router.post('/api/posts', mid.requiresLogin, function(req, res, next) {
     if (req.body.title && req.body.body && req.body.link) {
@@ -141,21 +143,21 @@ router.post('/register', function(req, res, next) {
 // GET /
 router.get('/', function(req, res, next) {
     return res.render('index', {
-        title: 'Home'
+        title: faker.company.catchPhrase()
     });
 });
 
 // GET /about
 router.get('/about', function(req, res, next) {
     return res.render('about', {
-        title: 'About'
+        title: faker.company.catchPhrase()
     });
 });
 
 // GET /contact
 router.get('/contact', function(req, res, next) {
     return res.render('contact', {
-        title: 'Contact'
+        title: faker.company.catchPhrase()
     });
 });
 // get api

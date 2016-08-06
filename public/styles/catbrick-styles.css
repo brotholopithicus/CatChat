@@ -1,0 +1,21 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Freckle+Face';
+body {
+    background: url('../images/waterfall.jpg') no-repeat center center fixed;
+    overflow-y: hidden;
+}
+canvas {
+    width: 100%;
+    margin: auto;
+    display: block;
+}
+#game {
+    width: 100%;
+    margin: auto;
+    display: block;
+}
+#catbrick-header {
+    color: #00A3FF;
+    font-family: "Freckle Face";
+    animation: 1s wobble infinite alternate;
+}

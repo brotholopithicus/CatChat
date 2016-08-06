@@ -1,11 +1,18 @@
 extends layout
-
+block stylesheets
+  link(rel='stylesheet', href='libs/normalize-css/normalize.css')
+  link(rel='stylesheet', href='libs/tether/dist/css/tether.css')
+  link(rel='stylesheet', href='libs/bootstrap/dist/css/bootstrap.css')
+  link(rel='stylesheet', href='libs/font-awesome/css/font-awesome.css')
+  link(rel='stylesheet', href='styles/style.css')
+  link(rel='stylesheet', href='styles/index-styles.css')
 block content
     .row
       .col-md-10.offset-md-1.home-content-main.col-xs-12
-        h1.display-4 Guiltless Feline Obsession
-        p Join a community of cat enthusiast's where the only rule is an unhealthy obsession for all things feline.
+        h1.display-4 #{title}
+        p {{ bacon }}
         hr.m-a-2
         small {{ bacon }}
         hr.m-a-2
         a.btn.btn-primary.btn-block(href='/register') Register Now!
+      img.profile-image(src='images/running-cat.gif')

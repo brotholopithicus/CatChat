@@ -19,8 +19,8 @@ var app = express();
 
 // mongodb connection
 // ===============================================================
-mongoose.connect('mongodb://localhost:27017/salmon');
-//mongoose.connect('107.180.101.201:27017/salmon');
+// mongoose.connect('mongodb://localhost:27017/salmon');
+mongoose.connect('107.180.101.201:27017/salmon');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 

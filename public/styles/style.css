@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 @import 'https://fonts.googleapis.com/css?family=Freckle+Face';
 body {
-    background: url('../images/cat-lookingleft.jpg') no-repeat center center fixed;
+    background: url('../images/flowers-sunset.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -10,13 +10,10 @@ body {
     color: #fff;
     overflow-x: hidden;
 }
-.row {
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 2em;
+.text-default {
+    color: #474747;
 }
+
 #wrapper {
     padding-left: 70px;
     transition: all .4s ease 0s;
@@ -124,6 +121,7 @@ body {
     line-height: 65px;
     display: inline-block;
 }
+
 @media (max-width:767px) {
     #wrapper {
         padding-left: 70px;
@@ -141,6 +139,7 @@ body {
         transition: all .4s ease 0s;
     }
 }
+
 .registrationForm {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -182,13 +181,9 @@ body {
     color: #474747;
 }
 .profile-content-main {
-    /*  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  padding: 2em;
-  padding-left: 4em;
-  padding-right: 4em;
-  color: #474747; */
-  color: #474747;
+    color: #FFF;
+    padding: 20px;
+    background-color: #0F85F4;
 }
 @keyframes dance {
     0% {
@@ -228,30 +223,158 @@ body {
     padding-top: 1em;
     padding-bottom: 0.7em;
 }
-
 #post-row-1-heading {
-  padding-bottom: 10px;
-  margin-top: -30px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    margin-top: -30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 #post-row-1-body {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 #post-row-3 {
-  margin-bottom: 3em;
+    margin-bottom: 3em;
 }
-@keyframes wobble {
-  0% {
-    transform: rotateY(40deg);
-    color: #00A3FF;
-  }
-  100% {
-    transform: rotateY(-40deg);
-    color: #DA5353;
-  }
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
 }
-#catbrick-header {
-  color: #00A3FF;
-  font-family: "Freckle Face";
-  animation: 1s wobble infinite alternate;
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+.sidebar-toggle-hamburger {
+    transiation: all 2s;
+}
+.fa-times {
+  color: #FF8C8C;
+}
+.fa-navicon {
+  color: #93C396;
+}
+@keyframes run {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
+.profile-image {
+    position: absolute;
+    left: -100%;
+    bottom: -20px;
+    animation: run 3s linear 1s infinite;
+}
+#game {
+    transform: scale(0.8, 0.8);
+    max-width: 100%;
+    margin: auto;
+}
+.fat-cat-gif {
+    max-width: 100%;
+    margin: auto;
+    margin-top: -35px;
+    display: block;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+}
+#profile-figure {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 1em;
+    /* border: 3px solid rgba(0, 0, 0, 0.5); */
+}
+.figure-caption {
+    margin-top: -30px;
+}
+#profile-table {
+    padding: 1em;
+    border: none;
+    /* border: 3px solid rgba(0, 0, 0, 0.5); */
+}
+#profile-row {
+    color: #474747;
+}
+.profile-button-bottom {
+    margin: auto;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    color: #FFF;
+    background-color: #0074E2;
+}
+.profile-button-bottom-one:hover {
+    transition: background-color 1s, color 1s;
+    ;
+    color: #FFF;
+    background-color: #00529F;
+}
+.profile-button-bottom-two:hover {
+    transition: background-color 1s, color 1s;
+    color: #FFF;
+    background-color: #00529F;
+}
+#profile-card {
+    background-color: #7EC1FF;
+    border: 1px solid #7EC1FF;
+}
+#profile-card * {
+    border: none;
+}
+.profile-cat-details-heading {
+    color: #DAECF7;
+    background-color: #0F85F4;
+}
+.profile-center-div {
+    border: none;
+}
+.profile-content-footer {
+    background-color: #0F85F4;
+    border: 1px solid #0F85F4;
+}
+canvas {
+    width: 100%;
+    margin: auto;
+    display: block;
 }

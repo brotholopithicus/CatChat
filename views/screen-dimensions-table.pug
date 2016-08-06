@@ -1,0 +1,23 @@
+table.table.table-bordered.table-inverse(ng-hide='!tableActive')
+    thead
+        tr
+            th
+            th Screen Available
+            th Screen Total
+            th Browser
+    tbody
+        tr
+            td Width
+            td {{displayInformation().availableWidth}}
+            td {{displayInformation().totalWidth}}
+            td {{displayInformation().browserWidth}}
+        tr
+            td Height
+            td {{displayInformation().availableHeight}}
+            td {{displayInformation().totalHeight}}
+            td {{displayInformation().browserHeight}}
+        tr
+            td Dimensions
+            td {{displayInformation().availableWidth}} X {{displayInformation().availableHeight}}
+            td {{displayInformation().totalWidth}} X {{displayInformation().totalHeight}}
+            td {{displayInformation().browserWidth}} X {{displayInformation().browserHeight}}
