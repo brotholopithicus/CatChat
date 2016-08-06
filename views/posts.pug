@@ -1,5 +1,6 @@
 extends layout
-
+block stylesheets
+  link(rel='stylesheet', href='styles/post-styles.css')
 block content
     .row(ng-repeat='post in posts | orderBy: "-updated"')
         .col-md-10.offset-md-1.about-content-main.text-xs-left.col-xs-12

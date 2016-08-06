@@ -189,4 +189,10 @@ router.get('/catbrick', function(req, res, next) {
     })
 });
 
+router.get('/r-post', function(req, res, next) {
+    return res.render('r-post', {
+        title: 'Posts'
+    });
+});
+
 module.exports = router;

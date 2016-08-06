@@ -1,0 +1,37 @@
+* {
+  color: #FFF;
+}
+#column-1, #column-2, #column-3 {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  height: 100px;
+}
+#upvote {
+    color: #28CF3E;
+}
+#downvote {
+  color: #D13F3F;
+}
+#column-1, #column-2 {
+  border-right: 2px solid #000;
+}
+#post-location {
+}
+#post-template {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+#column-1 span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#post-image {
+width: 100%;
+}
+#post-votes-tag {
+  font-size: 12px;
+  background-color: #0D5FEC;
+  padding: 5px;
+}
