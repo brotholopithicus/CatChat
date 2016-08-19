@@ -2,34 +2,33 @@ extends layout
 block stylesheets
     link(rel='stylesheet', href='styles/post-styles.css')
 block content
-    .container
-        .row
-            h1 Posts
-            p.lead SORTBY = {{propertyName}}; REVERSE = {{reverse}};
-            ul.nav.nav-inline.text-xs-center#post-sorting-list
-                a.nav-link.active(ng-click='sortBy("upvotes")') Upvotes &nbsp
+    .container.flex-container
+        .row.post-sorting-flex-container
+            ul.nav.nav-inline#post-sorting-list
+                button#btn-one.nav-link.active(ng-click='sortBy("updated")') Recent &nbsp
+                    span.fa(ng-show='propertyName === "updated"', ng-class='{"fa-arrow-up" : !reverse, "fa-arrow-down" : reverse }')
+                button#btn-two.nav-link(ng-click='sortBy("upvotes")') Upvotes &nbsp
                     span.fa(ng-show='propertyName === "upvotes"', ng-class='{"fa-arrow-up" : !reverse, "fa-arrow-down" : reverse }')
-                a.nav-link(ng-click='sortBy("views")') Views &nbsp
+                button#btn-three.nav-link(ng-click='sortBy("views")') Views &nbsp
                     span.fa(ng-show='propertyName === "views"', ng-class='{"fa-arrow-up" : !reverse, "fa-arrow-down" : reverse }')
-                a.nav-link(ng-click='sortBy("comments")') Comments &nbsp
+                button#btn-four.nav-link(ng-click='sortBy("comments")') Comments &nbsp
                     span.fa(ng-show='propertyName === "comments"', ng-class='{"fa-arrow-up" : !reverse, "fa-arrow-down" : reverse }')
-                a.nav-link(ng-click='sortBy("title")') Title &nbsp
+                button#btn-five.nav-link(ng-click='sortBy("title")') Title &nbsp
                     span.fa(ng-show='propertyName === "title"', ng-class='{"fa-arrow-up" : reverse, "fa-arrow-down" : !reverse }')
-                a.nav-link(ng-click='sortBy("author")') Author &nbsp
+                button#btn-six.nav-link(ng-click='sortBy("author")') Author &nbsp
                     span.fa(ng-show='propertyName === "author"', ng-class='{"fa-arrow-up" : reverse, "fa-arrow-down" : !reverse }')
         .row#post-template(ng-repeat='post in posts | orderBy:propertyName:reverse')
             .col-md-1#column-1
                 span.fa.fa-arrow-up.fa-2x#upvote(ng-click='upvote(post)')
                 span.tag.tag-default#post-votes-tag {{post.upvotes}}
                 span.fa.fa-arrow-down.fa-2x#downvote(ng-click='downvote(post)')
-            .col-md-2#column-2
-                img#post-image(src='images/ice.jpg')
             .col-md-9#column-3
-                h4
-                    | There's a sword in my cat's fur
-                    span.tag#post-location (imgur.com)
+                h4 {{ post.title }}
+                span.tag#post-location
+                p.text-muted {{post.link}}
                 p
-                    | submitted 3 hours ago by awesomedude8000 to /posts
-                a
-                    | comments
-                p AUTHOR = {{ post.author }}, UPVOTES = {{ post.upvotes }}, TITLE = {{post.title}}, COMMENT NUMBER = {{post.comments.length}}, VIEWS = {{ post.views }}
+                    | submitted {{timeSinceSubmit(post) | number:0}} hours ago by {{ post.author }} to /posts
+                blockquote.text-wrap
+                    | {{ post.body }}
+            .col-md-2#column-2
+                img#post-image(ng-src='{{post.link}}')

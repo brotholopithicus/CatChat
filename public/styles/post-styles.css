@@ -1,37 +1,98 @@
 * {
-  color: #FFF;
+    color: #FFF;
 }
-#column-1, #column-2, #column-3 {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  height: 100px;
+#column-1, #column-2, #column-3 {}
+#column-1, #column-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#post-location {}
+#post-template {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 1em;
+}
+#post-image {}
+#post-votes-tag {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#column-3 h4 {
+    font-size: 24px;
+}
+#column-3 p, #column-3 blockquote {
+    font-size: 12px;
 }
 #upvote {
-    color: #28CF3E;
+    color: #48A435;
 }
 #downvote {
-  color: #D13F3F;
+    color: #CC333F;
 }
-#column-1, #column-2 {
-  border-right: 2px solid #000;
+#upvote, #downvote {
+    font-size: 44px;
+    z-index: 1000;
 }
-#post-location {
+.post-sorting-flex-container {}
+#post-sorting-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
 }
-#post-template {
-  padding: 1em;
-  background-color: rgba(0, 0, 0, 0.61);
+#btn-one, #btn-two, #btn-three, #btn-four, #btn-five, #btn-six {
+    padding: 5px;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    width: 20%;
 }
-#column-1 span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+#btn-one {
+    background-color: #1CB841;
 }
-#post-image {
-width: 100%;
+#btn-two {
+    background-color: #C93B3B;
 }
-#post-votes-tag {
-  font-size: 12px;
-  background-color: #0D5FEC;
-  padding: 5px;
+#btn-three {
+    background-color: #0078E7;
+}
+#btn-four {
+    background-color: #DF7514;
+}
+#btn-five {
+    background-color: #42B8DD;
+}
+#btn-six {
+    background-color: #6A4A3C;
+}
+#btn-one:hover, #btn-two:hover, #btn-three:hover, #btn-four:hover, #btn-five:hover, #btn-six:hover {}
+#btn-one:hover {
+    background-color: #168731;
+}
+#btn-two:hover {
+    background-color: #9E2F2F;
+}
+#btn-three:hover {
+    background-color: #0358A6;
+}
+#btn-four:hover {
+    background-color: #955113;
+}
+#btn-five:hover {
+    background-color: #307C94;
+}
+#btn-six:hover {
+    background-color: #443128;
 }

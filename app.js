@@ -10,12 +10,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 4000;
+var app = express();
+
 // routes
 var index = require('./routes/index');
 var api = require('./routes/api');
-
-var app = express();
 
 // mongodb connection
 // ===============================================================
@@ -58,7 +58,6 @@ app.use(function(req, res, next) {
 // include routes
 // ===============================================================
 app.use('/', index);
-
 
 // error handling
 // ===============================================================

@@ -9,8 +9,8 @@
 6 silly lifecycle newapp@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle newapp@0.0.0~start: newapp@0.0.0
 8 verbose lifecycle newapp@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle newapp@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jamesjarvis/Documents/newapp/node_modules/.bin:/usr/local/Cellar/node/6.2.1/bin:~/.atom/packages:/Users/jamesjarvis/.atom:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:~/.atom/packages:/Users/jamesjarvis/.atom:/usr/local/mongodb/bin:/usr/local/mongodb/bin
-10 verbose lifecycle newapp@0.0.0~start: CWD: /Users/jamesjarvis/Documents/newapp
+9 verbose lifecycle newapp@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jamesjarvis/Documents/newappv2/node_modules/.bin:/usr/local/Cellar/node/6.2.1/bin:~/.atom/packages:/Users/jamesjarvis/.atom:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:~/.atom/packages:/Users/jamesjarvis/.atom:/usr/local/mongodb/bin:/Users/jamesjarvis/bin:/usr/local/mongodb/bin:/Users/jamesjarvis/bin
+10 verbose lifecycle newapp@0.0.0~start: CWD: /Users/jamesjarvis/Documents/newappv2
 11 silly lifecycle newapp@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle newapp@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle newapp@0.0.0~start: Failed to exec start script
@@ -25,7 +25,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:852:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
 15 verbose pkgid newapp@0.0.0
-16 verbose cwd /Users/jamesjarvis/Documents/newapp
+16 verbose cwd /Users/jamesjarvis/Documents/newappv2
 17 error Darwin 14.5.0
 18 error argv "/usr/local/Cellar/node/6.2.1/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.2.1

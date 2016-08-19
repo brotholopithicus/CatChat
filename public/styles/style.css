@@ -13,7 +13,6 @@ body {
 .text-default {
     color: #474747;
 }
-
 #wrapper {
     padding-left: 70px;
     transition: all .4s ease 0s;
@@ -121,7 +120,6 @@ body {
     line-height: 65px;
     display: inline-block;
 }
-
 @media (max-width:767px) {
     #wrapper {
         padding-left: 70px;
@@ -129,6 +127,10 @@ body {
     }
     #sidebar-wrapper {
         left: 70px;
+        display: none;
+    }
+    .display-4 {
+      display: none;
     }
     #wrapper.active {
         padding-left: 200px;
@@ -139,7 +141,6 @@ body {
         transition: all .4s ease 0s;
     }
 }
-
 .registrationForm {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -287,10 +288,10 @@ body {
     transiation: all 2s;
 }
 .fa-times {
-  color: #FF8C8C;
+    color: #FF8C8C;
 }
 .fa-navicon {
-  color: #93C396;
+    color: #93C396;
 }
 @keyframes run {
     from {

@@ -9,37 +9,14 @@ function mainController($scope, $http, orderByFilter) {
             browserHeight: window.innerHeight
         }
     }
-    $scope.posts = [{
-        title: 'Sandwiches Are Chill',
-        author: 'James',
-        upvotes: 18,
-        views: 93,
-        comments: [0, 1, 4, 5]
-    }, {
-        title: 'Silks Are Soft',
-        author: 'Matt',
-        upvotes: 8,
-        views: 3,
-        comments: [0, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-    }, {
-        title: 'Coins Are Shiny',
-        author: 'Zach',
-        upvotes: 11,
-        views: 45,
-        comments: [0]
-    }, {
-        title: 'Waters Are Wet',
-        author: 'Andrew',
-        upvotes: 2,
-        views: 12,
-        comments: [0, 3, 4, 5]
-    }, {
-        title: 'Florida Are Dingleberry',
-        author: 'Gregory',
-        upvotes: 4,
-        views: 123,
-        comments: [0, 1, 2, 3, 4, 5]
-    }];
+    $http.get('/api/posts')
+        .then(function(response) {
+            $scope.posts = response.data;
+            console.log($scope.posts);
+        }, function(error) {
+            $scope.posts = ['You Have Died Of Dysentary.'];
+            console.log(error);
+        });
     $scope.bacon = 'Frying some bacon...';
     $scope.sidebarState = false;
     $scope.toggleState = function() {
@@ -63,7 +40,7 @@ function mainController($scope, $http, orderByFilter) {
     }
 
     // POST SORTING
-    $scope.propertyName = 'author';
+    $scope.propertyName = 'updated';
     $scope.reverse = false;
     $scope.sortBy = function(propertyName) {
         $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
@@ -80,6 +57,14 @@ function mainController($scope, $http, orderByFilter) {
             $scope.hasVoted = false
             return post.upvotes -= 1;
         }
+    }
+    $scope.timeSinceSubmit = function(post) {
+        var ms_hr = 2.777777777777778e-7;
+        var updated = new Date(post.updated);
+        var now = new Date()
+        var elapsed = now.getTime() - updated.getTime();
+        var hours = elapsed * ms_hr;
+        return hours;
     }
     $scope.downvote = function(post) {
         if (!$scope.hasVoted) {

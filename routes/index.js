@@ -3,11 +3,11 @@ var router = express.Router();
 var User = require('../models/user');
 var Post = require('../models/post');
 var mid = require('../middleware');
-
+var fs = require('fs');
 var faker = require('faker');
 
 // POST /posts
-router.post('/api/posts', mid.requiresLogin, function(req, res, next) {
+router.post('/api/posts', function(req, res, next) {
     if (req.body.title && req.body.body && req.body.link) {
         var postData = {
             title: req.body.title,
@@ -162,19 +162,31 @@ router.get('/contact', function(req, res, next) {
 });
 // get api
 router.get('/api/posts', function(req, res, next) {
-    Post.find({}, function(error, posts) {
+    /*
+     Post.find({}, function(error, posts) {
         if (error) {
             return next(error);
         } else {
             res.json(posts);
         }
     });
+    */
+    fs.readFile(__dirname + '/../conf/data.json', 'utf-8', function(err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        var posts = JSON.parse(data);
+        res.json(posts)
+    });
 });
 // GET /contact
 router.get('/posts', function(req, res, next) {
+    /*
     return res.render('posts', {
         title: 'Posts'
     })
+    */
+    return res.render('r-post', { title: 'Posts' });
 });
 // GET /contact
 router.get('/newpost', function(req, res, next) {
@@ -193,6 +205,15 @@ router.get('/r-post', function(req, res, next) {
     return res.render('r-post', {
         title: 'Posts'
     });
+});
+router.get('/flex', function(req, res, next) {
+    return res.render('flex', {
+        title: 'Flex'
+    });
+});
+
+router.get('/chat', function(req, res, next) {
+    return res.render('chat', { title: 'Chat', nickname: req.session.nickname });
 });
 
 module.exports = router;

@@ -13,11 +13,14 @@
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "express-session": "^1.14.0",
+    "gridfs-stream": "^1.1.1",
     "method-override": "^2.3.6",
     "mongoose": "^4.5.8",
     "morgan": "~1.7.0",
+    "multer": "^1.2.0",
     "pug": "^2.0.0-beta4",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.4.8"
   },
   "devDependencies": {
     "chalk": "^1.1.3",
